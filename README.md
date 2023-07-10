@@ -10,6 +10,7 @@ Instead of the person pumping up the tire, the tire pumps up the person! Help pu
 ### Resources Used
 - [Mixamo](https://www.mixamo.com/#/) for walking animations
 - [jsfxr](https://sfxr.me/) and [chiptone](https://sfbgames.itch.io/chiptone) for generating sound effects
+- Unity game engine
 - The rest of the game (code, art, music) was created by me
 
 ### Screenshots
