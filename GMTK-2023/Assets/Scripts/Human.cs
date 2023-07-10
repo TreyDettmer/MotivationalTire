@@ -8,46 +8,62 @@ public class Human : MonoBehaviour
     private int _responseNeeded;
     public int ResponseNeeded { get => _responseNeeded; private set => _responseNeeded = value; }
     [SerializeField] float _movementSpeed;
-    [SerializeField] Material[] _materials;
+    [SerializeField] Animator _animator;
 
+    [SerializeField] Outline _outline;
     bool _isHappy = false;
     GameplayManager _gameplayManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        ResetHumanCondition();
         _gameplayManager = GameplayManager.Instance;
+        ResetHumanCondition();
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_gameplayManager._GameState != GameplayManager.GameState.Gameplay)
+
+        if (_gameplayManager._GameState != GameplayManager.GameState.Pregame)
         {
-            return;
+            transform.position += new Vector3(-_gameplayManager.HumanMovementSpeed * Time.deltaTime,0f,0f);
         }
-        transform.position += new Vector3(-_movementSpeed * Time.deltaTime,0f,0f);
         if (transform.position.x < -5f)
         {
-            transform.position = new Vector3(5f,transform.position.y,transform.position.z);
-            ResetHumanCondition();
+            if (!_isHappy)
+            {
+                _gameplayManager.OnUnhappyHuman(this);
+            }
+            HumanSpawner.Instance.DespawnHuman(this);
         }
     }
 
-    void ResetHumanCondition()
+    public void ResetHumanCondition()
     {
         _responseNeeded = Random.Range(1,4);
-        if (_materials.Length == 0)
+        if (_responseNeeded == 1)
         {
-            return;
+            _outline.OutlineColor = new Color(1f,0.1411549f,0f,1f);
         }
-        GetComponent<MeshRenderer>().material = _materials[_responseNeeded - 1];
+        else if (_responseNeeded == 2)
+        {
+            _outline.OutlineColor = new Color(1f,0.8315386f,0f,1f);
+        }
+        else
+        {
+            _outline.OutlineColor = new Color(0f,0.4721706f,1f,1f);
+        }
+        _isHappy = false;
+        _animator.SetBool("IsHappy",_isHappy);
     }
 
     public void BecomeHappy()
     {
         _isHappy = true;
+        _animator.SetBool("IsHappy",_isHappy);
     }
 
 

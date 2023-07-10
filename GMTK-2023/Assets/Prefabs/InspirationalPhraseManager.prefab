@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2449495723978845268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2449495723978845270}
+  - component: {fileID: 2449495723978845269}
+  m_Layer: 0
+  m_Name: InspirationalPhraseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2449495723978845270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2449495723978845268}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2449495723978845269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2449495723978845268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28864c6fe023c8a4691008836db7eeb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InspirationalPhrases:
+  - You can do it!
+  - I believe in you!
+  - Stay strong!
+  - Don't give up!
+  - I'm so proud of you.
+  - It's going to be okay.
+  - You are beautiful!
+  - Forget the h8ers!
+  - I'm here for you.
+  - Let's goooo!
+  - Tomorrow is a new day!
+  - Don't let your crown fall, king.
+  - Just keep swimming!
+  - One step at a time
+  - Reach for the stars!
+  - I've got your back!
+  - Never say never.
+  - Love yourself.
+  - Remember to breath.
+  - Keep your head up.
+  - No one is born perfect.
+  - It's okay not to be okay.
+  - Just do it!
+  - Stay positive!
+  - Nothing is impossible.
+  - Mistakes are lessons learned.
+  - Knowledge is limitless.
+  - Focus on the progress.
+  - Do what makes you happy!
+  - Everyday is a fresh start.

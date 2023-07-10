@@ -10,6 +10,8 @@ public class GameplayGUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI _scoreText;
     [SerializeField] TextMeshProUGUI _countdownText;
     [SerializeField] GameObject _gameOverMenu;
+    [SerializeField] TextMeshProUGUI _causeOfDeathText;
+    [SerializeField] TextMeshProUGUI _gameOverMenuScoreText;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,8 +58,20 @@ public class GameplayGUI : MonoBehaviour
         }
         if (newGameState == GameplayManager.GameState.Endgame)
         {
+            _causeOfDeathText.text = _gameplayManager.CauseOfDeath;
+            _gameOverMenuScoreText.text = _scoreText.text;
             _gameOverMenu.SetActive(true);
         }
+    }
+
+    public void RestartGame()
+    {
+        _gameplayManager.RestartGame();
+    }
+
+    public void QuitToMenu()
+    {
+        _gameplayManager.QuitToMenu();
     }
 
 
